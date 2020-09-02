@@ -94,6 +94,18 @@ build: yarn build:prod or build:stage
 
 〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
 
+### ◈ Backend Framework
+
+#### `Electron`
+
+#### `official Guide`: https://www.electronjs.org/
+
+〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+
+#### `Electron-builder`
+
+#### `official Guide`: https://www.electron.build/
+
 ### ◈ Etc
 
 #### `Webpack` | `Babel` | `EsLint` | `Prettier`
