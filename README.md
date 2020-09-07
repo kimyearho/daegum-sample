@@ -12,7 +12,6 @@ src                 -- source
   └ api             -- mock server api (option)
   └ assets          -- assets
   └ components      -- vue component
-  └ directive       -- directive (option)
   └ icons           -- svg icons (option)
   └ layout          -- vue layouts
   └ router          -- vue router
@@ -67,6 +66,10 @@ build: yarn build:prod or build:stage
 }
 
 ```
+
+### ◈ 외부 JS 라이브러리 import
+
+https://vuejsdevelopers.com/2017/04/22/vue-js-libraries-plugins/
 
 ### ◈ Front lib or Framework
 
