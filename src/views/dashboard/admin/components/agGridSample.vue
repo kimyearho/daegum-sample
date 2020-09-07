@@ -1,16 +1,20 @@
 <template>
   <div>
-    <div class="button-bar">
-      <button @click="sizeToFit()">Size to Fit</button>
-      <button style="margin: 0 10px" @click="autoSizeAll(false)">
+    <div class="button-bar" style="margin-bottom: 10px">
+      <el-button type="primary" @click="sizeToFit()">Size to Fit</el-button>
+      <el-button
+        type="primary"
+        style="margin: 0 10px"
+        @click="autoSizeAll(false)"
+      >
         Auto-Size All
-      </button>
-      <button @click="autoSizeAll(true)">
+      </el-button>
+      <el-button type="primary" @click="autoSizeAll(true)">
         Auto-Size All (Skip Header)
-      </button>
+      </el-button>
     </div>
     <ag-grid-vue
-      style="width: 100%;height: 280px;"
+      style="width: 100%;height: 500px;"
       class="ag-theme-alpine"
       :columnDefs="columnDefs"
       :rowData="rowData"
@@ -44,16 +48,32 @@ export default {
   },
   beforeMount() {
     this.gridOptions = {}
+
     this.columnDefs = [
-      { headerName: 'Make', field: 'make', sortable: true, unSortIcon: true },
-      { headerName: 'Model', field: 'model' },
-      { headerName: 'Price', field: 'price' },
       {
-        headerName: 'Status',
-        field: 'status',
+        field: 'athlete',
+        minWidth: 150,
+        sortable: true,
+        unSortIcon: true
+      },
+      {
+        field: 'age',
+        maxWidth: 90
+      },
+      {
+        field: 'country',
+        minWidth: 150,
         cellClass: function(params) {
-          return params.value === 'success' ? 'rag-green' : 'rag-red'
+          return params.value === 'United States' ? 'rag-green' : 'rag-red'
         }
+      },
+      {
+        field: 'year',
+        maxWidth: 100
+      },
+      {
+        field: 'date',
+        minWidth: 90
       }
     ]
   },
@@ -63,13 +83,13 @@ export default {
   },
   methods: {
     onGridReady() {
-      this.rowData = [
-        { make: 'Toyota', model: 'Celica', price: 35000, status: 'success' },
-        { make: 'Ford', model: 'Mondeo', price: 32000, status: 'success' },
-        { make: 'Porsche', model: 'Boxter', price: 72000, status: 'success' },
-        { make: 'Porsche', model: 'Boxter', price: 72000, status: 'primary' },
-        { make: 'Porsche', model: 'Boxter', price: 72000, status: 'success' }
-      ]
+      this.$axios
+        .get(
+          'https://raw.githubusercontent.com/ag-grid/ag-grid/master/grid-packages/ag-grid-docs/src/olympicWinners.json'
+        )
+        .then((res) => {
+          this.rowData = res
+        })
     },
     sizeToFit() {
       this.gridApi.sizeColumnsToFit()

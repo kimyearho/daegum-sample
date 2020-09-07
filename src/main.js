@@ -11,6 +11,10 @@ import store from './store'
 import router from './router'
 import './icons'
 import './permission'
+
+import Request from '@/utils/request'
+Vue.prototype.$axios = Request
+
 import VueDataTables from 'vue-data-tables'
 Vue.use(VueDataTables)
 

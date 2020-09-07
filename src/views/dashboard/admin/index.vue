@@ -11,7 +11,7 @@
         :xl="{ span: 12 }"
         style="padding-right:8px;margin-bottom:30px;"
       >
-        <transaction-table />
+        <ag-grid-table />
       </el-col>
       <el-col
         :xs="{ span: 24 }"
