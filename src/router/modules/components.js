@@ -30,6 +30,16 @@ const componentsRouter = {
       }
     },
     {
+      path: 'sample2/:id',
+      component: () => import('@/views/sample/samplePage2'),
+      name: 'SamplePage2',
+      hidden: true,
+      meta: {
+        title: 'Sample Page 2',
+        roles: ['admin']
+      }
+    },
+    {
       path: 'sample3',
       component: () => import('@/views/sample/samplePage3'),
       name: 'SamplePage3',

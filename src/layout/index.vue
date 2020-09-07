@@ -1,17 +1,21 @@
 <template>
   <div :class="classObj" class="app-wrapper">
+    <!-- NOTE 사이드바 -->
     <sidebar v-if="isSidebar" class="sidebar-container" />
     <div class="main-container" :style="!isSidebar ? 'marginLeft: 0px' : ''">
       <div
         :class="{ 'fixed-header': true }"
         :style="!isSidebar ? 'width: 100%' : ''"
       >
+        <!-- NOTE 상단 네비게이션, 사이드바가 표시되면 Breadcrumb을 표시한다. -->
         <navbar :is-dashboard-rule="isSidebar" />
 
         <!-- NOTE 새창에서는 탭 네비게이션을 표시하지 않음  -->
         <tags-view v-if="isSidebar" />
       </div>
+      <!-- NOTE 메인 라우터 -->
       <app-main />
+      <!-- NOTE 푸터 -->
       <footer-bar />
     </div>
   </div>
