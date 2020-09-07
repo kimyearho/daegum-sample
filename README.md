@@ -6,10 +6,9 @@
 
 ```
 dist                -- build output package
-mock                -- mock server & setting
 public              -- static assets
 src                 -- source
-  └ api             -- mock server api (option)
+  └ api             -- json files
   └ assets          -- assets
   └ components      -- vue component
   └ icons           -- svg icons (option)
