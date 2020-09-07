@@ -31,97 +31,7 @@ export default {
   data() {
     return {
       filterText: '',
-      data: [
-        {
-          label: 'Level one 1',
-          children: [
-            {
-              label: 'Level two 1-1',
-              children: [
-                {
-                  label: 'Level three 1-1-1'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          label: 'Level one 2',
-          children: [
-            {
-              label: 'Level two 2-1',
-              children: [
-                {
-                  label: 'Level three 2-1-1'
-                }
-              ]
-            },
-            {
-              label: 'Level two 2-2',
-              children: [
-                {
-                  label: 'Level three 2-2-1'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          label: 'Level one 3',
-          children: [
-            {
-              label: 'Level two 3-1',
-              children: [
-                {
-                  label: 'Level three 3-1-1'
-                }
-              ]
-            },
-            {
-              label: 'Level two 3-2',
-              children: [
-                {
-                  label: 'Level three 3-2-1'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          label: 'Level one 4',
-          children: [
-            {
-              label: 'Level two 4-1',
-              children: [
-                {
-                  label: 'Level three 4-1-1'
-                }
-              ]
-            },
-            {
-              label: 'Level two 4-2',
-              children: [
-                {
-                  label: 'Level three 4-2-1'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          label: 'Level one 5',
-          children: [
-            {
-              label: 'Level two 5-1',
-              children: [
-                {
-                  label: 'Level three 5-1-1'
-                }
-              ]
-            }
-          ]
-        }
-      ],
+      data: [],
       defaultProps: {
         children: 'children',
         label: 'label'
@@ -132,6 +42,9 @@ export default {
     filterText(val) {
       this.$refs.tree.filter(val)
     }
+  },
+  created() {
+    this.data = require('@/api/tree.json').data
   },
   methods: {
     filterNode(value, data) {

@@ -9,6 +9,7 @@ import Layout from '@/layout'
 /* Router Modules */
 import componentsRouter from './modules/components'
 
+// NOTE 정적 라우터
 export const constantRoutes = [
   {
     path: '/redirect',
@@ -45,12 +46,18 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/admin/index'),
         name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', blank: false }
+        meta: {
+          title: 'Dashboard',
+          icon: 'dashboard',
+          blank: false,
+          affix: true
+        }
       }
     ]
   }
 ]
 
+// NOTE 비동기 라우터
 export const asyncRoutes = [
   componentsRouter,
   { path: '*', redirect: '/404', hidden: true }

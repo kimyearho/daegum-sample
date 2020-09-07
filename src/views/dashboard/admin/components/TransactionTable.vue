@@ -1,16 +1,4 @@
 <template>
-  <!-- <data-tables
-    :data="list"
-    :page-size="10"
-    :pagination-props="{ pageSizes: [5, 10, 15] }"
-  >
-    <el-table-column
-      v-for="col in cols"
-      :prop="col.prop"
-      :label="col.label"
-      :key="col.label"
-    />
-  </data-tables> -->
   <el-table :data="list" style="width: 100%;padding-top: 15px;">
     <el-table-column label="Order_No" min-width="200">
       <template slot-scope="scope">
@@ -31,8 +19,6 @@
 </template>
 
 <script>
-import { transactionList } from '@/api/remote-search'
-
 export default {
   data() {
     return {
@@ -62,9 +48,7 @@ export default {
   },
   methods: {
     fetchData() {
-      transactionList().then((response) => {
-        this.list = response.data.items
-      })
+      this.list = require('@/api/list.json').data
     }
   }
 }

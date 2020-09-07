@@ -29,7 +29,11 @@
         <!-- REVIEW element ui commonjs erray igorne -->
         <el-dropdown-menu slot="dropdown"></el-dropdown-menu>
         <div class="avatar-wrapper">
-          <img :src="circleUrl" class="user-avatar" />
+          <img
+            :src="circleUrl"
+            class="user-avatar"
+            @click="$store.dispatch('user/logout')"
+          />
         </div>
       </el-dropdown>
     </div>
