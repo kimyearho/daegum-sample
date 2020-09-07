@@ -14,8 +14,10 @@ import './permission'
 import VueDataTables from 'vue-data-tables'
 Vue.use(VueDataTables)
 
-import * as VueGoogleMaps from 'vue2-google-maps'
+import 'ag-grid-community/dist/styles/ag-grid.css'
+import 'ag-grid-community/dist/styles/ag-theme-alpine.css'
 
+import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyDKpbGCZSsQkAJBFERvNJgsY9oWYHepBlk',

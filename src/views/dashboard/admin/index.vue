@@ -21,7 +21,7 @@
         :xl="{ span: 12 }"
         style="padding-right:8px;margin-bottom:30px;"
       >
-        <transaction-table />
+        <ag-grid-table />
       </el-col>
     </el-row>
   </div>
@@ -30,12 +30,14 @@
 <script>
 import PanelGroup from './components/PanelGroup'
 import TransactionTable from './components/TransactionTable'
+import AgGridTable from './components/agGridSample'
 
 export default {
   name: 'DashboardAdmin',
   components: {
     PanelGroup,
-    TransactionTable
+    TransactionTable,
+    AgGridTable
   },
   methods: {
     blankRouter(uri) {
