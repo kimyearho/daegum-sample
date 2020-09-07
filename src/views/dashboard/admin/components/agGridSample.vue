@@ -1,16 +1,15 @@
 <template>
   <div>
     <div class="button-bar" style="margin-bottom: 10px">
-      <el-button type="primary" @click="sizeToFit()">Size to Fit</el-button>
-      <el-button
-        type="primary"
-        style="margin: 0 10px"
-        @click="autoSizeAll(false)"
-      >
+      <el-button @click="sizeToFit()">Size to Fit</el-button>
+      <el-button style="margin: 0 10px" @click="autoSizeAll(false)">
         Auto-Size All
       </el-button>
-      <el-button type="primary" @click="autoSizeAll(true)">
+      <el-button @click="autoSizeAll(true)">
         Auto-Size All (Skip Header)
+      </el-button>
+      <el-button type="primary" icon="el-icon-download" @click="downloadCSV()">
+        Download CSV
       </el-button>
     </div>
     <ag-grid-vue
@@ -54,7 +53,8 @@ export default {
         field: 'athlete',
         minWidth: 150,
         sortable: true,
-        unSortIcon: true
+        unSortIcon: true,
+        checkboxSelection: true
       },
       {
         field: 'age',
@@ -100,6 +100,9 @@ export default {
         allColumnIds.push(column.colId)
       })
       this.gridColumnApi.autoSizeColumns(allColumnIds, skipHeader)
+    },
+    downloadCSV() {
+      this.gridApi.exportDataAsCsv()
     }
   }
 }
