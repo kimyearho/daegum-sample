@@ -29,14 +29,12 @@
 
 <script>
 import PanelGroup from './components/PanelGroup'
-import TransactionTable from './components/TransactionTable'
 import AgGridTable from './components/agGridSample'
 
 export default {
   name: 'DashboardAdmin',
   components: {
     PanelGroup,
-    TransactionTable,
     AgGridTable
   },
   methods: {
